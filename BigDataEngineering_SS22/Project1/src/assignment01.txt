@@ -1,0 +1,49 @@
+1.
+SELECT street AS Straße, postcode AS PLZ, city AS Stadt
+FROM households AS h
+    JOIN livingIn
+        ON h.id = household_id
+    JOIN citizens AS c
+        ON citizen_id = c.id
+WHERE street LIKE '%13' AND birthday < '1920'
+GROUP BY h.id
+HAVING count(*) >= 2
+ORDER BY Straße ASC;
+
+2.
+SELECT label AS Bezeichnung, max_amount AS Menge, firstname AS Vorname, lastname AS Nachname
+FROM (
+    SELECT article_id, max(amount) AS max_amount
+    FROM purchases 
+    GROUP BY article_id
+    ) AS p1
+    JOIN purchases AS p2
+        ON p1.article_id = p2.article_id AND amount = max_amount
+    JOIN citizens AS c
+        ON citizen_id = c.id
+    JOIN articles AS a
+        ON p1.article_id = a.id
+ORDER BY Bezeichnung DESC
+LIMIT 10;
+
+3.
+SELECT firstname AS Vorname, lastname AS Nachname, sum(sum_calories_each_article) AS Kalorien
+FROM (
+    SELECT l.citizen_id, sum(amount*calories*1000) AS sum_calories_each_article
+    FROM (
+        SELECT citizen_id
+        FROM livingIn
+        WHERE '1900' <= start <= '1949'
+        GROUP BY citizen_id
+        HAVING count(*) = 2
+        ) AS l
+        JOIN purchases AS p
+            ON l.citizen_id = p.citizen_id
+        JOIN nutritionalValues AS n
+            ON n.id = article_id
+    WHERE '1900' <= date <= '1949'
+    GROUP BY l.citizen_id, article_id) 
+    JOIN citizens
+        ON id = citizen_id
+GROUP BY id
+ORDER BY Kalorien DESC;
