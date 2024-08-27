@@ -1,0 +1,61 @@
+package prog2.tests.pub;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
+import routing.Graph;
+import routing.RoutingAlgorithm;
+import routing.TravelType;
+import routing.tests.TestingBase;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class TestSaarbrueckenMapEx2 extends TestingBase {
+
+	private static final String MapFileName = "saarbruecken.osm.nae";
+
+	public static String getCategory() {
+		return "public";
+	}
+
+	public static String getExercise() {
+		return "simplifygraph";
+	}
+
+	@Override
+	public String getMapFileName() {
+		return MapFileName;
+	}
+
+	@Test(timeout = 2500)
+	public void test2_CheckMinimizedGraph() {
+		Graph g = getGraph();
+
+		int numRemovedNodes, numRemovedEdges;
+		int numAssumedRemovedNodes, numAssumedRemovedEdges;
+		int numRemainingEdges;
+
+		RoutingAlgorithm ra = getRoutingAlgorithm(g);
+		numRemovedEdges = g.removeUntraversableEdges(ra, TravelType.BIKE);
+		numAssumedRemovedEdges = ra.isBidirectional() ? 44484 : 48176;
+		numRemainingEdges = ra.isBidirectional() ? 58536 : 54844;
+		assertEquals("Number of removed untraversable edges did not match.",
+				numAssumedRemovedEdges, numRemovedEdges);
+		assertEquals("Number of remaining edges did not match.",
+				numRemainingEdges, g.numEdges());
+
+		numAssumedRemovedNodes = ra.isBidirectional() ? 138204 : 138212;
+		numRemovedNodes = g.removeIsolatedNodes();
+		assertEquals("Number of removed isolated nodes did not match.",
+				numAssumedRemovedNodes, numRemovedNodes);
+		assertEquals("Number of non isolated nodes did not match.",
+				165906 - numAssumedRemovedNodes, g.numNodes());
+
+		numRemovedNodes = g.removeIsolatedNodes();
+		assertEquals("Isolated nodes cannot be removed twice.", 0,
+				numRemovedNodes);
+	}
+
+}

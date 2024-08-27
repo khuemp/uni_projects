@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+
+from testing import *
+import sys
+import glob
+import shutil
+import os
+
+def assureDir(path):
+  try:
+    os.makedirs(path)
+  except OSError as exception:
+    if exception.errno != errno.EEXIST:
+      raise
+
+def rmPath(path):
+  try:
+    shutil.rmtree(path)
+  except FileNotFoundError:
+    pass
+
+def copyFile(dest,src):
+    shutil.copy(src, dest)
+
+
+
+if len(sys.argv) != 2:
+    print("Verwendung ./build_testbox <tests/pub/test_zum_debuggen.s>")
+    raise SystemExit
+testPath = sys.argv[1]
+
+
+rmPath("testbox")
+assureDir("testbox")
+
+for asmFile in get_test_sources(testPath):
+  copyFile("testbox", asmFile)
+
+
+print('---- textbox eingerichtet fuer Test {} ----'.format(testPath))

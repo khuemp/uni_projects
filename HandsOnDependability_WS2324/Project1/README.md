@@ -39,13 +39,13 @@ Here is an example:
 
 #### Termination Conditions (-t)
 - A specified number of steps.
-> -t ⟨N⟩ with ⟨N⟩ being a number of steps, e.g. -t 3
+> -t \<N> with \<N> being a number of steps, e.g. -t 3
 
 - Reaching a terminal symbol for the first time.
-> -t "S,⟨X⟩" with ⟨X⟩ being a symbol, e.g. -t "S,O" for a buoy. Keep in mind that visiting a cell also means cleaning that cell. The output can therefore never be X for a visited cell.
+> -t "S,\<X>" with \<X> being a symbol, e.g. -t "S,O" for a buoy. Keep in mind that visiting a cell also means cleaning that cell. The output can therefore never be X for a visited cell.
 
 - Reaching a position for the first time.
-> -t "P,⟨X⟩,⟨Y⟩" with ⟨X⟩/⟨Y⟩ being the X / Y coordinate, e.g. -t "P,2,5"
+> -t "P,\<X>,\<Y>" with \<X>/\<Y> being the X / Y coordinate, e.g. -t "P,2,5"
 
 #### Output Functions (-o)
 
@@ -53,7 +53,7 @@ Here is an example:
 > -o N outputs for example 42
 
 - The number of encounters of special symbols (for example how many buoy cells were passed).
-> -o "C,⟨S⟩", with ⟨S⟩ being the symbol to count, for example -o "C,X" for trash outputs for example 18
+> -o "C,\<S>", with \<S> being the symbol to count, for example -o "C,X" for trash outputs for example 18
 
 - The symbol on the terminal cell.
 > -o S outputs for example X
