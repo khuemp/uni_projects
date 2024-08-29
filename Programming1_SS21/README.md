@@ -11,7 +11,7 @@ The PDF files provided contain the exercise- and tutorial sheet problems for you
 - [Exercise Sheet G](Problems/Uebungsblatt_G.pdf)
 - [Exercise Sheet J](Problems/Uebungsblatt_J.pdf)
 - [Exercise Sheet K](Problems/Uebungsblatt_K.pdf)
-- [Exercise Sheet XMAS](Problems/Uebungsblatt_XMAS.pdf)
+- [Exercise Sheet XMAS](Problems/Uebungsblatt_XMAS_Loesungsvorschlag.pdf)
 
 ## Tutorial Sheet
 - [Tutorial Sheet A](Problems/Tutorienblatt_A_Loesungsvorschlag.pdf)
