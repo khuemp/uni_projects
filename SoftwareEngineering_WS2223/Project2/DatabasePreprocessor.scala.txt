@@ -1,0 +1,95 @@
+package de.uni_saarland.cs.se
+package preprocessor
+
+import utils.*
+
+import scala.collection.mutable
+
+
+/**
+ * Our database SPL implemented with the C pre-processor.
+ */
+class Database() {
+#ifdef Map
+  private val storage: Storage = MapStorage()
+#elif defined(List)
+  private val storage: Storage = ListStorage()
+#endif
+
+#ifdef Transaction
+  private var tmpStorage: Storage = ListStorage()
+#endif
+
+#ifdef Read
+  /**
+   * Read a value from the database.
+   *
+   * @param key the key under which the value is stored
+   * @return the stored value if present or an empty option
+   */
+  def read(key: String): Option[String] = {
+#ifdef Logging
+    println(s"Reading value for key '$key'.")
+#endif
+    storage.get(key)
+  }
+#endif
+
+#ifdef Write
+  /**
+   * Store a value with a given key.
+   *
+   * @param key   the key to use for storing
+   * @param value the value to store
+   */
+  def write(key: String, value: String): Unit = {
+#ifdef Logging
+    println(s"Writing value '$value' at key '$key'.")
+#endif
+
+#ifdef Transaction
+    tmpStorage.put(key, value)
+#else
+    storage.put(key, value)
+#endif
+  }
+#endif
+
+#ifdef Transaction
+  /**
+   * Commit all pending writes.
+   *
+   * @return the number of committed write operations.
+   */
+  def commit(): Int = {
+    val size = tmpStorage.size()
+#ifdef Logging
+    println(s"Committing $size entries.")
+#endif
+    
+    tmpStorage.foreach((k, v) => storage.put(k, v))
+    tmpStorage = ListStorage()
+    size
+  }
+
+  /**
+   * Roll back all pending writes.
+   *
+   * @return the number of roll-backed write operations.
+   */
+  def rollback(): Int = {
+    val size = tmpStorage.size()
+#ifdef Logging
+    println(s"Rolling back ${tmpStorage.size()} entries.")
+#endif
+    
+    tmpStorage = ListStorage()
+    size
+  }
+#endif
+
+  /**
+   * The type of storage used by the database.
+   */
+  val storageType = storage.storageType
+}

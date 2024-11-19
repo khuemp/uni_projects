@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+
+import sys
+import glob
+from testing import *
+
+numTest=0
+numFail=0
+numPass=0
+
+suiteSpec = None
+if len(sys.argv) != 2:
+    testSpec = "tests/pub"
+else:
+    testSpec = sys.argv[1]
+
+
+if testSpec.endswith(".s"):
+    tests = [testSpec]
+else:
+    tests = sorted([x for x in glob.glob(testSpec + "/**.s") + glob.glob(testSpec + "/**/*.s")])
+
+print("--- MIPS tester ---")
+for testPath in tests:
+   print("---> test '{}'".format(testPath))
+   sources = get_test_sources(testPath)
+   numTest += 1
+   success = runTest(testPath, dumpReference=True, marsPath="/usr/bin/mars-mips")
+   if success:
+      numPass += 1
+   print("")
+print('--------------------')
+print("Passed {} of {} tests".format(numPass, numTest))
+print('--------------------')

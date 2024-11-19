@@ -1,0 +1,33 @@
+#maptd{
+	position: static;
+	margin: 0 auto 1cm auto;
+	width: 16cm;
+	height: 10cm;
+}
+#options{
+	position: static;
+	width: 100%;
+	padding: 0;
+}
+#mpilogo, .navform, #settingsprint, #credits, #hidebar, .popup, #addDest{
+	display: none;
+}
+#output, #options{
+	display: inline;
+	overflow: visible;
+	box-shadow: none;
+	border: none;
+	margin: 1cm 0;
+	height: auto !important;
+}
+
+.olControlAttribution {
+font-size: smaller;
+right: 3px;
+bottom: 3px !important;
+color: #000000;
+}
+
+#printattachment{
+	display: block;
+}

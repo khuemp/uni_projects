@@ -1,0 +1,39 @@
+DROP VIEW IF EXISTS boughtPickle;
+
+CREATE VIEW boughtPickle AS
+    SELECT citizen_id
+    FROM articles
+        JOIN purchases
+            ON id = article_id
+    WHERE label = 'Pickle' AND amount = 0.5 AND '1943-11-19' <= date <= '1943-11-24';
+    
+DROP VIEW IF EXISTS boughtSalad;
+
+CREATE VIEW boughtSalad AS
+    SELECT citizen_id
+    FROM articles
+        JOIN purchases
+            ON id = article_id
+    WHERE label = 'Salad' AND amount >= 2 AND '1943-11-19' <= date <= '1943-11-24';
+    
+DROP VIEW IF EXISTS boughtCarrot;
+
+CREATE VIEW boughtCarrot AS
+    SELECT citizen_id
+    FROM articles
+        JOIN purchases
+            ON id = article_id
+    WHERE label = 'Carrot' AND 3 >= amount >= 1 AND '1943-11-19' <= date <= '1943-11-24';
+    
+DROP VIEW IF EXISTS address;
+
+CREATE VIEW address AS
+    SELECT citizen_id
+    FROM households
+        JOIN livingIn
+            ON id = household_id
+    WHERE street = '%18' AND street = '%straße 1%' AND street  = 'L%';
+    
+SELECT firstname AS Vorname, lastname AS Nachname
+FROM boughtPickle AS p, boughtSalad AS s, boughtCarrot AS c, address AS a, citizens
+WHERE p.citizen_id = s.citizen_id = c.citizen_id = a.citizen_id = id;

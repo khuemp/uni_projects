@@ -1,0 +1,194 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MPII Maps</title>
+<link rel="stylesheet" media="all" type="text/css" href="main.css" />
+<link rel="stylesheet" media="print" type="text/css" href="print.css" />
+<script src="Objects.js"></script>
+<script src="serverComm.js"></script>
+<script src="Geocoding.js"></script>
+<!-- bring in the OpenLayers javascript library
+			 (here we bring it from the remote site, but you could
+			 easily serve up this javascript yourself) -->
+<script src="OpenLayers/OpenLayers.js"></script>
+<!-- bring in the OpenStreetMap OpenLayers layers.
+			 Using this hosted file will make sure we are kept up
+			 to date with any necessary changes -->
+<script src="OpenStreetMap.js"></script>
+<script src="mapView.js"></script>
+<script src="InputOutput.js"></script>
+<script src="View.js"></script>
+<script src="Controller.js"></script>
+
+<script type="text/javascript">
+	var Controller;
+	//Initialize Controller.
+	function init() {
+		Controller = new Controller();
+	}
+</script>
+</head>
+<body onload="init();" onclick="ViewIO.hideSuggestions()">
+
+	<div id="maptd">
+		<!-- define a DIV into which the map will appear. Make it take up the whole window -->
+		<div id="map"></div>
+		<div id="hidebar" class="ontop" onclick="ViewIO.hideOptions()"
+			title="Hide Options">&nbsp;</div>
+	</div>
+
+	<div id="options">
+		<div id="mpilogo">
+			<img src="images/mpi.jpg" id="mpi" />
+			<div id="mpimaps">maps</div>
+		</div>
+		<!--The options-->
+		<div id="allinput">
+			<div id="locations">
+				<!--This div contains the list of places to navigate to (and from)-->
+				<div class="location navform" id="place_0wrap">
+					<!--Each such block produces a line with label, textfield for address and buttons at the end-->
+					<table style="width: 100%">
+						<tr>
+							<td><label for="place_0" onclick="ViewIO.showPlace(0)" title="Click to show this place in the map">A</label></td>
+							<td>
+								<input id="place_0" type="text" class="textfield" onkeyup="ViewIO.destFieldChanged(0)" onblur="ViewIO.stopSuggestions()" onfocus="ViewIO.unhighlightInput(this)" />
+								<div id="place_0suggestions" class="suggestions"></div>
+							</td>
+							<td><input type="button" value=""
+								onclick="ViewIO.deleteDestination(0)"
+								class="button bdelete" title="Delete destination" /></td>
+							<td><input type="button" value=""
+								onclick="ViewIO.inputFieldUp(0)" class="button bup"
+								title="Move destination up in list" style="display: none"/></td>
+							<td><input type="button" value=""
+								onclick="ViewIO.inputFieldDown(0)" class="button bdown"
+								title="Swap destinations." /></td>
+						</tr>
+					</table>
+				</div>
+				<div class="location navform destpicker" id="place_1wrap">
+					<table style="width: 100%">
+						<tr>
+							<td><label for="place_1" onclick="ViewIO.showPlace(1)" title="Click to show this place in the map">B</label></td>
+							<td>
+								<input id="place_1" type="text" class="textfield" onkeyup="ViewIO.destFieldChanged(1)" />
+								<div id="place_1suggestions" class="suggestions"></div>
+								</td>
+							<td><input type="button" value=""
+								onclick="ViewIO.deleteDestination(1)"
+								class="button bdelete" title="Delete destination" /></td>
+							<td><input type="button" value=""
+								onclick="ViewIO.inputFieldUp(1)" class="button bup"
+								title="Move destination up in list" /></td>
+							<td><input type="button" value=""
+								onclick="ViewIO.inputFieldDown(1)" class="button bdown"
+								title="Move destination down in list" /></td>
+							
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="addDest"><a href="javascript:ViewIO.addDest()">Add destination</a></div>
+			<div id="mot" class="navform">
+				<!-- The list which offers all means of transport -->
+				<h2>Mode:</h2>
+				<div class="mode blist" id="mot_car_div" title="car">
+					<input type="radio" name="mot" value="car" id="mot_car" checked />
+					<label for="mot_car"><img src="images/car.png" height="14" /></label>
+				</div>
+				<div class="mode blist" id="mot_bike_div" title="bike">
+					<input type="radio" name="mot" value="bike" id="mot_bike" /> <label
+						for="mot_bike"><img src="images/bike.png" height="16" /></label>
+				</div>
+				<div class="mode blist" id="mot_byfoot_div" title="by foot">
+					<input type="radio" name="mot" value="byfoot" id="mot_byfoot" /> <label
+						for="mot_byfoot"><img src="images/byfoot.png" height="16" /></label>
+				</div>
+			</div>
+			<div id="met" class="navform">
+				<!-- The list which offers all metrics -->
+				<!--<h2>Metric:</h2>-->
+				<!--<div class="mode blist" id="met_dist_div">-->
+					<!--<input type="radio" name="met" value="distance" id="met_dist"-->
+						<!--checked /> <label for="met_dist">distance</label>-->
+				<!--</div>-->
+				<!--<div class="mode blist" id="met_en_div">-->
+					<!--<input type="radio" name="met" value="energy" id="met_en" /> <label-->
+						<!--for="met_en">energy</label>-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div id="avoid" class="navform">-->
+				<!--[> The list which offers all ways the API is able to avoid <]-->
+				<!--<h2>Avoid:</h2>-->
+				<!--<div class="mode avpoint" id="avoid_tolls_div">-->
+					<!--<input type="checkbox" name="avoid" value="tolls" id="avoid_tolls" />-->
+					<!--<label for="avoid_tolls">tolls</label>-->
+				<!--</div>-->
+				<!--<div class="mode avpoint" id="avoid_highways_div">-->
+					<!--<input type="checkbox" name="avoid" value="highways"-->
+						<!--id="avoid_highways" /> <label for="avoid_highways">highways</label>-->
+				<!--</div>-->
+				<!--<div class="mode avpoint" id="avoid_ferries_div">-->
+					<!--<input type="checkbox" name="avoid" value="ferries"-->
+						<!--id="avoid_ferries" /> <label for="avoid_ferries">ferries</label>-->
+				<!--</div>-->
+				<!--<div class="mode avpoint" id="avoid_unpaved_div">-->
+					<!--<input type="checkbox" name="avoid" value="unpaved"-->
+						<!--id="avoid_unpaved" /> <label for="avoid_unpaved">unpaved</label>-->
+				<!--</div>-->
+				<!--<div class="mode avpoint" id="avoid_sc_div">-->
+					<!--<input type="checkbox" name="avoid" value="sc" id="avoid_sc" /> <label-->
+						<!--for="avoid_sc">seasonal closure</label>-->
+				<!--</div>-->
+				<!--<div class="mode avpoint" id="avoid_cc_div">-->
+					<!--<input type="checkbox" name="avoid" value="cc" id="avoid_cc" /> <label-->
+						<!--for="avoid_cc">country crossing</label>-->
+				<!--</div>-->
+			<!--</div>-->
+			<div id="commitbutton" class="navform">
+				<input type="button" value="Calculate Route"
+					onclick="ViewIO.beginCalculation(); return false;" />
+			</div>
+			<!--This button actually does nothing, because BeginCalculation() is not implemented yet.-->
+			<div id="settingsprint">
+				<input type="button" value="Print" onclick="print()" />
+				<!--print() is a predefined method in JS which activates the printing dialog of the browser. -->
+			</div>
+			<!--<input type="button" value="Suche Punkt"
+								onclick="Controller.searchPoint();" /> 
+							<input type="button" value="Zeichne Pfad"
+								onclick="Controller.drawRoute();" />-->
+		</div>
+		<div id="output">
+		</div>
+
+	</div>
+
+	<!-- begin of waitpopup    -->
+	<div id="waitpopup" class="ontop popup">
+		<!-- This div is displayed when waiting(true) is called to show waiting popup during calculation -->
+		<h1>Calculating your route</h1>
+		<div class="innerpopup">
+			<img src="images/progress.gif" />
+			<div>
+				<input type="button" value="Cancel Calculation"
+					onclick="ViewIO.cancelCalculation()" />
+				<!--  no funcionality yet TODO: cancel method -->
+			</div>
+		</div>
+	</div>
+	<!-- end of waitpopup -->
+
+	<div id="JSdisclaimer"
+		style="position: fixed; z-index: 1005; top: 0px; left: 0px; width: 100%; height: 100%; background-color: white; text-align: center; vertical-align: middle; padding: 0; opacity: .7">
+		<h1 style="margin: 10em 4em">This application needs Javascript to
+			work properly. Please enable Javascript to use this service.</h1>
+	</div>
+  <script>
+    document.getElementById("JSdisclaimer").style.display = "none";
+  </script>
+</body>
+</html>

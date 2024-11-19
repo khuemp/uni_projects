@@ -1,0 +1,341 @@
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+body {
+	background-color: grey;
+	margin: 0px;
+	padding: 0px;
+	font-family: arial, verdana, sans-serif;
+	font-size: 11pt;
+	overflow: hidden;
+}
+
+.ontop {
+	z-index: 1006;
+}
+
+#locations,#commitbutton {
+}
+
+#addDest{
+	text-align: center;
+	font-size: 80%;
+	padding-bottom: .3em;
+	margin-bottom: .2em;
+	font-weight: bold;
+}
+
+.location table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.bup,.bdown,.bdelete {
+	margin: 0;
+	padding: 0;
+	width: 15px;
+	height: 24px;
+	background: none;
+	background-image: url(images/button.png);
+	background-repeat: no-repeat;
+	border: none;
+	display: block;
+	border: none
+}
+
+.bup {
+	position: relative;
+	left: -17px;
+	top: -18px;
+	background-position: 0px 0px;
+}
+
+.bdown {
+	display: none;
+	background-position: -17px 0px;
+}
+
+.bdelete {
+	background-position: -34px 0px;
+}
+
+.bup:HOVER {
+	background-position: 0px -24px;
+}
+
+.bdown:HOVER {
+	background-position: -17px -24px;
+}
+
+.bdelete:HOVER {
+	background-position: -34px -24px;
+}
+#options {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	vertical-align: top;
+	width: 240px;
+	padding: 0px 5px;
+	background-color: white;
+	border: 1px solid #999;
+	height:100%;
+	background-color: white;
+	box-shadow: 3px 0px 3px black;
+	z-index: 1005;
+}
+
+#options a {
+	text-decoration: none;
+	color: black;
+}
+
+#options a:hover {
+	text-decoration: underline;
+}
+
+.navform {
+	margin: 0;
+	clear: both;
+	vertical-align: top;
+}
+
+.navform label {
+	width: 3em;
+}
+
+#options h2 {
+	padding: 0 .3em;
+	margin: 0;
+	font-size: 80%;
+	font-weight: bold;
+	background-image: url(images/verlauf.png);
+	border-radius: 3px;
+	color: white;
+}
+
+#options .location label {
+	display: inline-block;
+	margin: 0 4px 0 0;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	width: 1.3em;
+	font-size: 1.1em;
+	border-radius: 1em;
+	background-color: #1d365f;
+	color: white;
+}
+.location .textfield{
+	width: 180px;
+}
+
+#options .location {
+	padding: 3px;
+	margin: 2px;
+}
+
+#options .optional {
+	opacity: .3;
+}
+
+#commitbutton {
+	margin: .5em 0;
+}
+
+#commitbutton input {
+	width: 100%;
+}
+
+
+.blist {
+	padding: .3em 0;
+	display: inline-block;
+	width: 33%;
+	margin-right: -3px;
+}
+
+.blist input {
+	margin: .4em 3px 0 2px;
+	display: block;
+	float: left;
+}
+
+.blist label:hover, .avpoint label:hover {
+	background-color: #97a2c0;
+}
+.avpoint label{
+	display: inline-block;
+	width: 215px;
+	border-radius: 3px;
+}
+
+.blist label {
+	display: block;
+	width: auto;
+	padding: .3em 0 .3em 1.3em;
+	border-radius: 5px;
+}
+
+#settingsprint input {
+	width: 49%;
+}
+
+#output{
+	width: 100%;
+  height: 200px;
+	border: 1px solid #ccc;
+	overflow-y: scroll;
+	margin: .5em 0;
+}
+
+#output h1 {
+	font-size: 100%;
+	font-weight: bold;
+}
+
+#output ol {
+	padding-left: 1.5em;
+}
+
+#map {
+	text-align: center;
+	vertical-align: middle;
+	height: auto;
+}
+
+#hidebar {
+	position: absolute;
+	left: 1px;
+	bottom: 0px;
+	width: 32px;
+	height: 32px;
+	background-color: white;
+	background-position: center;
+	overflow: hidden;
+	border-radius: 0 10px 0 0;
+	border-width: 1px 1px 0 0;
+	border-color: #999;
+	border-style: solid;
+	background-image: url(images/hideOptions.png);
+	box-shadow: 3px 0px 3px #000;
+}
+
+#hidebar:hover {
+	background-color: #88a;
+}
+#maptd{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: auto;
+	height: 100%;
+	margin-left: 250px;
+}
+
+.popup {
+	position: fixed;
+	top: 100px;
+	left: 50px;
+	width: 400px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 5px 5px 20px black;
+	visibility: hidden;
+}
+
+.popup h1 {
+	margin: 0 0 1em 0;
+	font-size: 120%;
+	background-color: #ddd;
+	border-radius: 7px 7px 0 0;
+}
+
+.innerpopup {
+	margin: 1em 0;
+}
+
+.innerpopup img {
+	margin: 1em;
+}
+
+#settingspopup select {
+	width: 200px;
+}
+
+#settingspopup label {
+	display: inline-block;
+	width: 100px;
+	text-align: left;
+}
+
+#mpi {
+	width: 100%;
+	margin-top: 10px;
+}
+
+#mpimaps {
+	position: relative;
+	left: 0;
+	top: -1em;
+	text-align: right;
+	color: #333;
+	font-weight: bold;
+}
+
+/* MAP.css */
+div#map {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.olControlAttribution {
+font-size: smaller;
+right: 3px;
+bottom: 3px !important;
+color: #000000;
+}
+.suggestions{
+	height: 0;
+	width: 0px;
+    left: 0;
+    position: relative;
+    top: 0;
+}
+.suggestions *{
+	margin: 0;
+	padding: 0;
+	z-index: 1005;
+}
+.suggestions ul{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: white;
+	box-shadow: 5px 5px 5px black;
+	border: 1px solid #999;
+	list-style-type: none;
+	max-width: 600px;
+}
+.suggestions li{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.suggestions li.even{
+	background-color: #eef;
+}
+.suggestions li:hover{
+	background-color: #ddf;
+}
+.suggestions .error{
+	color: red;
+}
+#printattachment{
+	display: none;
+}
