@@ -1,0 +1,222 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\MSIGF7~1\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\MSIGF7~1\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.0 (Eclipse Foundation Java 16.0.2)
+[debug]       Load.loadUnit: plugins took 135.2403ms
+[debug]       Load.loadUnit: defsScala took 0.4174ms
+[debug] [Loading] Scanning directory C:\Users\MSI GF75\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\MSI GF75\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 30.6473 ms
+[debug]           Load.resolveProject(global-plugins) took 75.5774ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\MSI GF75\.sbt\1.0\plugins, plugins: List(<none>))) took 135.8326ms
+[debug] [Loading] Done in C:\Users\MSI GF75\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 175.7395ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.6544ms
+[debug]     Load.loadUnit(file:/C:/Users/MSI%20GF75/.sbt/1.0/plugins/, ...) took 326.8234ms
+[debug]   Load.apply: load took 617.5121ms
+[debug]   Load.apply: resolveProjects took 7.6696ms
+[debug]   Load.apply: finalTransforms took 82.2476ms
+[debug]   Load.apply: config.delegates took 13.0985ms
+[debug]   Load.apply: Def.make(settings)... took 647.0571ms
+[debug]   Load.apply: structureIndex took 112.2766ms
+[debug]   Load.apply: mkStreams took 2.1792ms
+[info] loading global plugins from C:\Users\MSI GF75\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 3091.0382ms
+[debug]           Load.loadUnit: plugins took 25.8821ms
+[debug]           Load.loadUnit: defsScala took 0.0035ms
+[debug] [Loading] Scanning directory C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\project
+[debug]             Load.loadUnit: mkEval took 5.2304ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.4391 ms
+[info] loading settings for project se-ws2122-assignment-03-ws2223_student_version-build from plugins.sbt,idea.sbt ...
+[debug]               Load.resolveProject(se-ws2122-assignment-03-ws2223_student_version-build) took 2.6391ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id se-ws2122-assignment-03-ws2223_student_version-build, base: C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\project, plugins: List(<none>))) took 4.5285ms
+[debug] [Loading] Done in C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\project, returning: (se-ws2122-assignment-03-ws2223_student_version-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2149.4375ms
+[debug]           Load.loadUnit: cleanEvalClasses took 12.4903ms
+[debug]         Load.loadUnit(file:/C:/Users/MSI%20GF75/OneDrive/Document/Lectures/SE/Assignment_03/se-ws2122-assignment-03-ws2223_student_version/project/, ...) took 2188.9448ms
+[debug]       Load.apply: load took 2190.5206ms
+[debug]       Load.apply: resolveProjects took 0.2021ms
+[debug]       Load.apply: finalTransforms took 10.2215ms
+[debug]       Load.apply: config.delegates took 0.4515ms
+[debug]       Load.apply: Def.make(settings)... took 85.4671ms
+[debug]       Load.apply: structureIndex took 26.3474ms
+[debug]       Load.apply: mkStreams took 0.0025ms
+[info] loading project definition from C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug]     Load.loadUnit: plugins took 3547.9766ms
+[debug]     Load.loadUnit: defsScala took 0.0037ms
+[debug] [Loading] Scanning directory C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version
+[debug]       Load.loadUnit: mkEval took 0.6932ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbtide.ConfigPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 2.6284 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 39.687ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version, dependencies: List(ClasspathDependency(RootProject(https://github.com/regb/cafesat.git#49e7c8954235001787ad14c8db3c60c36ec45cce),None)), plugins: List(<none>))) took 44.4547ms
+[debug] [Loading] Done in C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1441.1027ms
+[debug]     Load.loadUnit: cleanEvalClasses took 41.2997ms
+[debug]   Load.loadUnit(file:/C:/Users/MSI%20GF75/OneDrive/Document/Lectures/SE/Assignment_03/se-ws2122-assignment-03-ws2223_student_version/, ...) took 5031.6556ms
+[debug]           Load.loadUnit: plugins took 20.1585ms
+[debug]           Load.loadUnit: defsScala took 0.0029ms
+[debug] [Loading] Scanning directory C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat\project
+[debug]             Load.loadUnit: mkEval took 0.309ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.0306 ms
+[info] loading settings for project cafesat-build from idea.sbt ...
+[debug]               Load.resolveProject(cafesat-build) took 3.6595ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id cafesat-build, base: C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat\project, plugins: List(<none>))) took 5.1024ms
+[debug] [Loading] Done in C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat\project, returning: (cafesat-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 24.1879ms
+[debug]           Load.loadUnit: cleanEvalClasses took 3.5289ms
+[debug]         Load.loadUnit(file:/C:/Users/MSI%20GF75/.sbt/1.0/staging/ca0d540220502776ebdc/cafesat/project/, ...) took 48.7544ms
+[debug]       Load.apply: load took 58.8497ms
+[debug]       Load.apply: resolveProjects took 0.2367ms
+[debug]       Load.apply: finalTransforms took 16.6481ms
+[debug]       Load.apply: config.delegates took 0.2885ms
+[debug]       Load.apply: Def.make(settings)... took 64.5287ms
+[debug]       Load.apply: structureIndex took 22.151ms
+[debug]       Load.apply: mkStreams took 0.0019ms
+[info] loading project definition from C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 285.0992ms
+[debug]     Load.loadUnit: defsScala took 0.0023ms
+[debug] [Loading] Scanning directory C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat
+[debug]       Load.loadUnit: mkEval took 0.479ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 1.3398 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 1.2648ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat, configurations: List(it), plugins: List(<none>))) took 2.9394ms
+[debug] [Loading] Done in C:\Users\MSI GF75\.sbt\1.0\staging\ca0d540220502776ebdc\cafesat, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 37.8087ms
+[debug]     Load.loadUnit: cleanEvalClasses took 5.2867ms
+[debug]   Load.loadUnit(https://github.com/regb/cafesat.git#49e7c8954235001787ad14c8db3c60c36ec45cce, ...) took 329.0859ms
+[debug] Load.apply: load took 5364.0106ms
+[debug] Load.apply: resolveProjects took 0.2406ms
+[debug] Load.apply: finalTransforms took 31.7272ms
+[debug] Load.apply: config.delegates took 0.5485ms
+[debug] Load.apply: Def.make(settings)... took 109.8252ms
+[debug] Load.apply: structureIndex took 45.262ms
+[debug] Load.apply: mkStreams took 0.0029ms
+[info] set current project to se-ws2223-assignment-03 (in build file:/C:/Users/MSI%20GF75/OneDrive/Document/Lectures/SE/Assignment_03/se-ws2122-assignment-03-ws2223_student_version/)
+[warn] there's a key that's not used by any other settings/tasks:
+[warn]  
+[warn] * root / idePackagePrefix
+[warn]   +- C:\Users\MSI GF75\OneDrive\Document\Lectures\SE\Assignment_03\se-ws2122-assignment-03-ws2223_student_version\build.sbt:8
+[warn]  
+[warn] note: a setting might still be used by a command; to exclude a key from this `lintUnused` check
+[warn] either append it to `Global / excludeLintKeys` or call .withRank(KeyRanks.Invisible) on the key
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 51345 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 51345, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, ProjectRef(uri("https://github.com/regb/cafesat.git#49e7c8954235001787ad14c8db3c60c36ec45cce"), "root") / Compile / compile and 1 others.
+[info] 	Run `last` for details.
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	ProjectRef(uri("https://github.com/regb/cafesat.git#49e7c8954235001787ad14c8db3c60c36ec45cce"), "root") / Compile / compile
+[debug] 	ProjectRef(uri("https://github.com/regb/cafesat.git#49e7c8954235001787ad14c8db3c60c36ec45cce"), "root") / Test / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to se-ws2223-assignment-03 (in build file:/C:/Users/MSI%20GF75/OneDrive/Document/Lectures/SE/Assignment_03/se-ws2122-assignment-03-ws2223_student_version/)
+[debug] > Exec(idea-shell, None, None)

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="DatabaseSPL,se-ws2223-assignment-02-minhkhuepham_8935" />
+    <profile name="sbt 1" modules="se-ws2122-assignment-03-ws2223_student_version_1328,se-ws2223-assignment-03" />
+    <profile name="sbt 2" modules="CafeSat">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+    </profile>
   </component>
 </project>

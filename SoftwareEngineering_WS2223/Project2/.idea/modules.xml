@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DatabaseSPL.iml" filepath="$PROJECT_DIR$/.idea/modules/DatabaseSPL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DatabaseSPL-build.iml" filepath="$PROJECT_DIR$/.idea/modules/DatabaseSPL-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CafeSat.iml" filepath="$PROJECT_DIR$/.idea/modules/CafeSat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CafeSat-build.iml" filepath="$PROJECT_DIR$/.idea/modules/CafeSat-build.iml" group="sbt-build-modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se-ws2223-assignment-03.iml" filepath="$PROJECT_DIR$/.idea/modules/se-ws2223-assignment-03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/se-ws2223-assignment-03-build.iml" filepath="$PROJECT_DIR$/.idea/modules/se-ws2223-assignment-03-build.iml" group="sbt-build-modules" />
     </modules>
   </component>
 </project>
